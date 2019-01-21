@@ -1,5 +1,17 @@
 #!/bin/bash
 
+BASE_URI="https://github.com/iwamatsu"
+REPO_POKY="${BASE_URI}/poky.git"
+REPO_META_DEBIAN="${BASE_URI}/meta-debian.git"
+REPO_META_DEBIAN_EXTENDED="${BASE_URI}/meta-debian-extended.git"
+REPO_META_EMLINUX="${BASE_URI}/meta-emlinux.git"
+REPO_META_OPENBOX="${BASE_URI}/meta-openbox.git"
+REPO_META_OE="https://github.com/openembedded/meta-openembedded.git"
+IMAGE=core-image-openbox
+
+SCRIPT_DIR=$(cd $(dirname $0);pwd)
+cd ${SCRIPT_DIR}
+
 if [ ! -d repo ] ; then
     mkdir repo
 fi
@@ -7,32 +19,11 @@ if [ ! -d work ] ; then
     mkdir work
 fi
 
-if [ ! -e repo/meta-debian ] ; then
-    git clone -b for-thud-devel git@github.com:iwamatsu/meta-debian.git repo/meta-debian
-    # git clone -b master https://github.com/meta-debian/meta-debian.git
-fi
+. __repo_ctrl.sh
 
-if [ ! -e repo/meta-debian-extended ] ; then
-    git clone https://github.com/iwamatsu/meta-debian-extended.git repo/meta-debian-extended
+if [ "$1" = "update" ]; then
+   exit
 fi
-
-if [ ! -e repo/poky ] ; then
-    git clone -b libxxf86misc git@github.com:iwamatsu/poky.git repo/poky
-fi
-
-if [ ! -e repo/meta-emlinux ] ; then
-    git clone https://github.com/iwamatsu/meta-emlinux.git repo/meta-emlinux
-fi
-
-if [ ! -e repo/meta-openbox ] ; then
-    git clone https://github.com/iwamatsu/meta-openbox.git repo/meta-openbox
-fi
-
-if [ ! -e repo/meta-openembedded ] ; then
-    git clone -b thud git://git.openembedded.org/meta-openembedded repo/meta-openembedded
-fi
-
-IMAGE=core-image-openbox
 
 source repo/poky/oe-init-build-env work/build-${IMAGE}
 
