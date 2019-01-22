@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_URI="https://github.com/iwamatsu"
+BASE_URI="https://gitlab.miraclelinux.com/emlinux"
 REPO_POKY="${BASE_URI}/poky.git"
 REPO_META_DEBIAN="${BASE_URI}/meta-debian.git"
 REPO_META_DEBIAN_EXTENDED="${BASE_URI}/meta-debian-extended.git"
