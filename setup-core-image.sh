@@ -31,7 +31,6 @@ bitbake-layers add-layer ../../repo/meta-emlinux
 
 echo "DISTRO = \"emlinux\"" >> ./conf/local.conf
 echo "PACKAGE_CLASSES = \"package_deb\"" >> ./conf/local.conf
-echo "MACHINE = \"qemuarm\"" >> ./conf/local.conf
 
 echo "DL_DIR = \"\${TOPDIR}/../downloads\"" >> ./conf/local.conf
 echo "SSTATE_DIR = \"\${TOPDIR}/../sstate-cache\"" >> ./conf/local.conf
