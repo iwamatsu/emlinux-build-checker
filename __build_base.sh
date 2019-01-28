@@ -1,5 +1,5 @@
 
-source repo/poky/oe-init-build-env work/build-${IMAGE}
+source repo/poky/oe-init-build-env work/${BUILD_NAME}
 
 if [ -z ${1} ]; then
     bitbake ${IMAGE}
