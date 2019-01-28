@@ -2,7 +2,7 @@
 
 . __repo_info.sh
 
-IMAGE=core-image-minimal
+BUILD_NAME=core-image-minimal
 
 SCRIPT_DIR=$(cd $(dirname $0);pwd)
 cd ${SCRIPT_DIR}
@@ -13,7 +13,7 @@ if [ "$1" = "update" ]; then
    exit
 fi
 
-source repo/poky/oe-init-build-env work/build-${IMAGE}
+source repo/poky/oe-init-build-env work/build-${BUILD_NAME}
 
 # delete
 bitbake-layers remove-layer meta-poky
