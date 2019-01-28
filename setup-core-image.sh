@@ -1,12 +1,12 @@
 #!/bin/bash
 
-. __repo_info.sh
 
 BUILD_NAME=core-image-minimal
 
 SCRIPT_DIR=$(cd $(dirname $0);pwd)
 cd ${SCRIPT_DIR}
 
+. __repo_info.sh
 . __repo_ctrl.sh
 
 if [ "$1" = "update" ]; then

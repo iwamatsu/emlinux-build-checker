@@ -1,19 +1,12 @@
 #!/bin/bash
 
-. __repo_info.sh
 
 BUILD_NAME=core-image-openbox
 
 SCRIPT_DIR=$(cd $(dirname $0);pwd)
 cd ${SCRIPT_DIR}
 
-if [ ! -d repo ] ; then
-    mkdir repo
-fi
-if [ ! -d work ] ; then
-    mkdir work
-fi
-
+. __repo_info.sh
 . __repo_ctrl.sh
 
 if [ "$1" = "update" ]; then

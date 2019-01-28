@@ -3,13 +3,13 @@
 # rootfs: meta-debian + meta-debian-extended
 # dist: poky
 
-. __repo_info.sh
 
 IMAGE=core-image-minimal-emlinux-poky
 
 SCRIPT_DIR=$(cd $(dirname $0);pwd)
 cd ${SCRIPT_DIR}
 
+. __repo_info.sh
 . __repo_ctrl.sh
 
 if [ "$1" = "update" ]; then
