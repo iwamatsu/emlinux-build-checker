@@ -29,3 +29,6 @@ echo "PACKAGE_CLASSES = \"package_deb\"" >> ./conf/local.conf
 
 echo "DL_DIR = \"\${TOPDIR}/../downloads\"" >> ./conf/local.conf
 echo "SSTATE_DIR = \"\${TOPDIR}/../sstate-cache\"" >> ./conf/local.conf
+
+echo "BBMASK = \"meta-debian/recipes-core\"" >> >> ./conf/local.conf
+
