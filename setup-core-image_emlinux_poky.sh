@@ -3,13 +3,8 @@
 # rootfs: meta-debian + meta-debian-extended
 # dist: poky
 
-BASE_URI="https://gitlab.miraclelinux.com/emlinux"
-REPO_POKY="${BASE_URI}/poky.git"
-REPO_META_DEBIAN="${BASE_URI}/meta-debian.git"
-REPO_META_DEBIAN_EXTENDED="${BASE_URI}/meta-debian-extended.git"
-REPO_META_EMLINUX="${BASE_URI}/meta-emlinux.git"
-REPO_META_OPENBOX="${BASE_URI}/meta-openbox.git"
-REPO_META_OE="https://github.com/openembedded/meta-openembedded.git"
+. __repo_info.sh
+
 IMAGE=core-image-minimal-emlinux-poky
 
 SCRIPT_DIR=$(cd $(dirname $0);pwd)
