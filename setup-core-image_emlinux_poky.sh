@@ -34,4 +34,4 @@ echo "LINUX_GIT_PROTOCOL = \"https\"" >> ./conf/local.conf
 echo "LINUX_GIT_REPO = \"linux-cip.git\"" >> ./conf/local.conf
 echo "LINUX_GIT_SRCREV = \"linux-4.19.y-cip\"" >> ./conf/local.conf
 
-echo "BBMASK = \"meta-debian/recipes-core\"" >> >> ./conf/local.conf
+echo "BBMASK = \"meta-debian/recipes-core\"" >> ./conf/local.conf
