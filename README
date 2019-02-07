@@ -1,0 +1,58 @@
+# setup
+
+  setup-minimal.sh
+
+# build
+
+  MACHINE=qemuarm build-minimal.sh
+
+# rebuild recipe
+
+  MACHINE=qemuarm build-minimal.sh busybox
+
+# scripts
+
+  - (setup|build)-minimal.sh
+    dist: poky
+    image: core-image-minimal
+    layer: meta, meta-poky
+
+  - (setup|build)-x11.sh
+    dist: poky
+    image: core-image-x11
+    layer: meta, meta-poky
+
+  - (setup|build)-openbox.sh
+    dist: poky
+    image: core-image-openbox
+    layer: meta, meta-poky, meta-openbox
+
+  - (setup|build)-minimal_debian_emlinux.sh
+    dist: emlinux
+    image: core-image-minimal
+    layer: meta, meta-emlinux, meta-debian, meta-debian-extended
+
+  - (setup|build)-x11_debian_emlinux.sh
+    dist: emlinux
+    image: core-image-x11
+    layer: meta, meta-emlinux, meta-debian, meta-debian-extended
+
+  - (setup|build)-openbox_debian_emlinux.sh
+    dist: emlinux
+    image: core-image-openbox
+    layer: meta, meta-emlinux, meta-debian, meta-debian-extended, meta-openbox
+
+  - (setup|build)-minimal_debian_poky.sh
+    dist: emlinux
+    image: core-image-minimal
+    layer: meta, meta-poky, meta-debian, meta-debian-extended
+
+  - (setup|build)-x11_debian_poky.sh
+    dist: emlinux
+    image: core-image-x11
+    layer: meta, meta-poky, meta-debian, meta-debian-extended
+
+  - (setup|build)-openbox_debian_poky.sh
+    dist: emlinux
+    image: core-image-openbox
+    layer: meta, meta-poky, meta-debian, meta-debian-extended, meta-openbox

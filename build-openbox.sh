@@ -1,7 +1,6 @@
 #!/bin/bash
 
-IMAGE=core-image-minimal
-BUILD_NAME=build-core-image-minimal-emlinux-emlinux
+NAME=$(basename $0 | sed -e "s/build-\(.*\)\.sh/\1/g")
 
 SCRIPT_DIR=$(cd $(dirname $0);pwd)
 cd ${SCRIPT_DIR}
