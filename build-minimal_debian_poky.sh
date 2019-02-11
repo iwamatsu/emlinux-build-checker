@@ -11,3 +11,8 @@ SCRIPT_DIR=$(cd $(dirname $0);pwd)
 cd ${SCRIPT_DIR}
 
 . __build_base.sh
+
+cd ${SCRIPT_DIR}
+if [ $? -eq 0 ] ; then
+. __check_rootfs.sh
+fi
