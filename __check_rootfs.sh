@@ -8,7 +8,6 @@ datadir=${PWD}/base-data
 # recipe
 cd work/${BUILD_NAME}/tmp-glibc/work/
 for d in `ls -1` ; do
-    echo $d
     ls -1 $d >> ${tmpfile}
 done
 cat ${tmpfile} | sort | uniq > $tmpfile.recipes
