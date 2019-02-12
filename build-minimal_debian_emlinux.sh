@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEPLOY_BASE_DIR=:/opt/built-emlinux
+DEPLOY_BASE_DIR=/opt/built-emlinux
 BUILD_DATE=`date +%Y%m%d%H%M`
 NAME=$(basename $0 | sed -e "s/build-\(.*\)\.sh/\1/g")
 __IMAGE=$(basename $0 | sed -e "s/build-\(.*\)_\(.*\)_\(.*\)\.sh/\1/g")
@@ -16,6 +16,8 @@ cd ${SCRIPT_DIR}
 
 # copy data
 if [ $? -eq 0 ] ; then
+
+    echo "copy data"
     mkdir -p ${DEPLOY_BASE_DIR}/${BUILD_DATE}
     cp -rf tmp-glibc/deploy/images/${MACHINE} ${DEPLOY_BASE_DIR}/${BUILD_DATE}/.
 fi
@@ -23,5 +25,5 @@ fi
 # check rootfs
 cd ${SCRIPT_DIR}
 if [ $? -eq 0 ] ; then
-. __check_rootfs.sh
+    . __check_rootfs.sh
 fi
