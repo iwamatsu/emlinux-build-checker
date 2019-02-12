@@ -17,3 +17,5 @@ cd -
 # diff
 diff -urN ${tmpfile}.tree ${datadir}/${IMAGE}.tree
 diff -urN ${tmpfile}.recipes ${datadir}/${IMAGE}.recipes
+
+return 0
