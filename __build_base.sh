@@ -6,4 +6,5 @@ if [ -z ${1} ]; then
 else
     bitbake -c cleanall $1
     bitbake $1
+    exit
 fi
