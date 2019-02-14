@@ -16,8 +16,8 @@ cd ${SCRIPT_DIR}
 
 # copy data
 if [ $? -eq 0 ] ; then
-    mkdir -p ${DEPLOY_BASE_DIR}/${BUILD_DATE}
-    cp -rf tmp-glibc/deploy/images/${MACHINE} ${DEPLOY_BASE_DIR}/${BUILD_DATE}/.
+    mkdir -p ${DEPLOY_BASE_DIR}/${MACHINE}/${BUILD_DATE}
+    cp -rf tmp-glibc/deploy/images/${MACHINE}/* ${DEPLOY_BASE_DIR}/${MACHINE}/${BUILD_DATE}/.
 fi
 
 # check rootfs
