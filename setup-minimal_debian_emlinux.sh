@@ -9,7 +9,8 @@ DIST=$(basename $0 | sed -e "s/setup-\(.*\)_\(.*\)_\(.*\)\.sh/\3/g")
 
 SCRIPT_DIR=$(cd $(dirname $0);pwd)
 cd ${SCRIPT_DIR}
-
+ 
+# include repository data
 . __repo_info.sh
 . __repo_ctrl.sh
 
@@ -51,4 +52,5 @@ if [ ! -e ./conf/local.conf.orig ] ; then
     echo "LINUX_GIT_REPO = \"linux-cip.git\"" >> ./conf/local.conf
     echo "LINUX_GIT_SRCREV = \"linux-4.19.y-cip\"" >> ./conf/local.conf
 fi
-
+ 
+exit 0
